@@ -1065,7 +1065,9 @@ client.on('message', function(msg) {
 client.on('message', message => {
      if (message.author.bot) return;
     if (message.content.startsWith("helpp")) {
-if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+
+	     if(!message.channel.guild) return;
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | *** ⚠ لا تملك صلاحية للأمر ***');
 	
 		 
 
