@@ -1065,7 +1065,7 @@ client.on('message', function(msg) {
 client.on('message', message => {
      if (message.author.bot) return;
     if (message.content.startsWith("-help")) {
-if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );خاص مع تمنياتي لك بالتوفيق والنجاح**')
+if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );خاص مع تمنياتي لك بالتوفيق والنجاح**');
             
 	
 		 
