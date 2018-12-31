@@ -51,39 +51,7 @@ if (command == "say2") {
 
 
 
-////////////////يرسل صورة بامبد وبدون /////////////////
 
-
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  var argresult = message.content.split(" ").slice(1);
-if (command == "صورة بدون") {
-  message.channel.sendFile(argresult.join(" "))
-
-}
-});
-
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  var argresult = message.content.split(" ").slice(1);
-if (command == "صورهه") {
-    let embedsay = new Discord.RichEmbed()
- .setColor("RANDOM")
-.setDescription("khalid")
-.setImage(`${argresult}`)
-message.channel.send({embed:embedsay});
-
-
-}
-});
 
 
 
@@ -307,7 +275,7 @@ client.on("message", message => {
 
 
 client.on('ready', () => {
-var x = client.channels.get("511837858785525775");
+var x = client.channels.get("478545290421600266");
 if (x) x.join();
 });
 
@@ -430,7 +398,7 @@ client.on('message', message => {
   let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
   var argresult = message.content.split(" ").slice(1);
-if (command == "صورة بدون") {
+if (command == "صورة2") {
   message.channel.sendFile(argresult.join(" "))
 
 }
@@ -443,7 +411,7 @@ client.on('message', message => {
   let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
   var argresult = message.content.split(" ").slice(1);
-if (command == "صورهه") {
+if (command == "صورة") {
     let embedsay = new Discord.RichEmbed()
  .setColor("RANDOM")
 .setDescription("رايكم نختار اي صورة لسيرفر")
@@ -806,10 +774,9 @@ client.on("guildMemberAdd", member => {
   ════════════════════ஜ۩۞۩ஜ═════════════════════ 
 　 　 　　　           •●【【 W E L C O M E - T O - SERVER】】●• 
 منور السيرفر يا مرحباء مليون
-اتمنى ان تستمتع بالسيرفر
- وإن شاء الله مراح نقصر معك 
-وبتفاعل راح تحصل على رتب 
-وحتى بالفعليات اللي راح نقيمها 
+يرحب بأعضاه الجدد RTF مجتمع
+ويـتـمـنى لك قضاء وقت ممتع
+شعارنا إبداع و سمو أخلاقي
 ...ووفقك الله...
 ═════════════════════ஜ۩۞۩ஜ═════════════════════:rose: 
 :crown:اسم العضو  ${member}:crown:  
@@ -1065,7 +1032,7 @@ client.on("message", message => {
  message.delete(); 
 };     
 });
-////////////////////////////////////////
+/////////////////////يعرض معلومات السيرفر///////////////////
 
 
 client.on('message', function(msg) {
@@ -1092,6 +1059,59 @@ client.on('message', function(msg) {
 
 
 /////////////////////////////////////////////////////////////////////
+
+
+
+client.on('message', message => {
+     if (message.author.bot) return;
+    if (message.content.startsWith("-help")) {
+ if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+		 message.channel.send('**تم ارسال الأوامر لك بالخاص مع تمنياتي لك بالتوفيق والنجاح**');
+            
+	
+		 
+
+
+ message.author.sendMessage(`
+ **
+
+╔[❖════════════❖]╗
+             Prefix = ' - '
+╚[❖════════════❖]╝
+
+
+ ╔[❖════════════❖]╗
+┃             أوامر المسؤلين              ┃
+ ╚[❖════════════❖]╝
+
+❖  -bc               ➾ يرسل رسالة بالخاص لجميع اعضاء السيرفر بمنشن
+❖  -say               ➾ يرسل رسالة بالشات بدون انبد
+❖  -say2               ➾يرسل رسالة في الشات بانبد
+❖  -send               ➾يرسل تصويت بالشات  
+❖  -صورة               ➾ يرسل صورة بالشات بدون انبد
+❖  -صورة2               ➾ يرسل صورة بالشات بانبد
+❖  -muchat               ➾ يقوم بقفل الشات
+❖  -opchat               ➾ يقوم بفتح الشات
+❖  -user               ➾ يقوم بعمل روم بأعلاء الرومات وعرض عدد أعضاء السيرفر
+❖  -setstats               ➾ يقوم بعمل رومات لعرض التاريخ والوقت باسفل الرومات
+❖  -للبوت               ➾ يقوم بإرسال رسالة لصاحب البوت بالخاص للمساعدة
+❖  مسح               ➾ يقوم بمسح 100 رسالة بالشات
+❖  clr               ➾ يقوم بمسح 100 رسالة بالشات
+❖  clear               ➾ يقوم بمسح 100 رسالة بالشات
+
+
+╔[❖════════════❖]╗
+                    Welcome
+╚[❖════════════❖]╝
+
+(" أتمنى أن تفيدكم هذة الاوامر وهي مخصصة لأصحاب السيرفر وطاقم إدارة مجتمع RTF")
+
+
+`);
+
+    }
+});
+
 
 
 
