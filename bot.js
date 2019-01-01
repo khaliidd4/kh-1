@@ -1173,7 +1173,36 @@ client.on('message', message => {
 
 /////////////////////////////////////////////////////////////////////
 
+///////////////////////////يغير اسم وصورة البوت////////////////////////////////////////
+	  
 
+const Devs = ['346167763305496594' , '346167763305496594' , '' , ''];
+client.on('message', message => {
+var prefix = "-";
+  if (!message.content.startsWith(prefix)) return;
+  var args = message.content.split(' ').slice(1);
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+
+if (message.content.startsWith(prefix + 'nameb')) {
+  client.user.setUsername(argresult).then
+      message.channel.sendMessage(`**${argresult}** : تم بنجاح تغيير الاسم ?`)
+  return message.reply("**تم تغيير الاسم البوت بنجاح ?**");
+} else
+if (message.content.startsWith(prefix + 'photeb')) {
+  client.user.setAvatar(argresult);
+    message.channel.sendMessage(`**${argresult}** : تم تغيير صورة البوت بنجاح ?`);
+
+}
+});
+client.on('message', message => {
+    if (message.content.startsWith("عدد الدعوات")) {
+
+    message.guild.fetchInvites()
+    .then(invites => message.channel.send(`**:busts_in_silhouette:  العدد     [${invites.find(invite => invite.inviter.id === message.author.id)}]    :calling:   عضو لهذا السيرفر    `))
+         
+    }
+});
 
 
 /////////////////////////////////////////////////////////////////////
