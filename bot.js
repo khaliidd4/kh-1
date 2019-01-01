@@ -951,7 +951,7 @@ client.on('ready',async () => {
     const config = {
       name: "RTF DisMTA", // اسم الرتبة
       guildid: "463576669199007754", // اي دي السيرفر
-      sec: 0.1 // عدد الثواني
+      sec: 1.1 // عدد الثواني
     };
     let guild = client.guilds.get(config.guildid);
     let role = guild.roles.find(role => role.name === config.name);
