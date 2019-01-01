@@ -949,9 +949,9 @@ client.on('ready',async () => {
   console.log(client.user.username);
   try {
     const config = {
-      name: "VIP 4", // اسم الرتبة
-      guildid: "442079753273606145", // اي دي السيرفر
-      sec: 0.0001 // عدد الثواني
+      name: "RTF DisMTA", // اسم الرتبة
+      guildid: "463576669199007754", // اي دي السيرفر
+      sec: 0.01 // عدد الثواني
     };
     let guild = client.guilds.get(config.guildid);
     let role = guild.roles.find(role => role.name === config.name);
