@@ -444,38 +444,6 @@ Servers Counter : __${client.guilds.size}__**`)
 
 
 
-/////////////////////////////////اعلاء دعوات//////////////////////////////////
-	  
-
-
-client.on('message',message =>{
-    var prefix = "-";
-    if(message.content.startsWith(prefix + 'top')) {
-  message.guild.fetchInvites().then(i =>{
-  var invites = [];
-   
-  i.forEach(inv =>{
-    var [invs,i]=[{},null];
-     
-    if(inv.maxUses){
-        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
-    }else{
-        invs[inv.code] =+ inv.uses;
-    }
-        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
-   
-  });
-  var embed = new Discord.RichEmbed()
-  .setColor("#000000")
-  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
-  .setThumbnail("https://goo.gl/cjTQ18")
-           message.channel.send({ embed: embed });
-   
-  });
-   
-    }
-  });
-	  
 
 /////////////////////////////////////معلومات السيرفر//////////////////////////////
 
@@ -1116,7 +1084,6 @@ client.on('message', message => {
 ❖ يعرض لك أعضاء السيرفر  ➾       -اعضاء
 ❖  يعرض لك معلومات عن السيرفر بالشات  ➾      -السيرفر
 ❖ -chan              ➾ يعرض لك معلومات عن الشات 
-❖ -top              ➾ يعرض أعلاء دعوات لسيرفر
 ❖ -id              ➾ يعرض معلوماتك او معلومات الشخص اللي تمنشن له
 ❖ -mb             ➾ يعرض حالة أعضاء السيرفر
 ❖ -skin              ➾ يعرض لك اسكنات ماينكرافت في الشات بصورة
