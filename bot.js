@@ -221,34 +221,6 @@ client.on('message', msg => {
 
 
 
-  
-  client.on('message', message => {
-     if (message.author.bot) return;
-    if (message.content.startsWith("رابط")) {
-        message.channel.createInvite({
-        thing: true,
-        maxUses: 1,
-        maxAge: 3600,
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-          .setDescription(" تم أرسال الرابط برسالة خاصة ")
-           .setAuthor(client.user.username, client.user.avatarURL)
-                 .setAuthor(client.user.username, client.user.avatarURL)
-                .setFooter('طلب بواسطة: ' + message.author.tag)
-
-      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-              const Embed11 = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        
-    .setDescription(" مدة الرابط : ساعه  عدد استخدامات الرابط : 1 ")
-      message.author.sendEmbed(Embed11)
-    }
-	
-	});
-
 /////////////////////يعرض صورة السيرفر /////////////////////////////
 
 client.on("message", message => {
@@ -454,7 +426,7 @@ client.on('message', msg => {
 	//////////////////////////////يعطيك معلومات عن السيرفر اللي طلع منة بوتك////////////////////////////////////
 
 client.on('guildDelete', guild => {
-  client.channels.get("493388063330926592")
+  client.channels.get("346167763305496594")
 const embed = new Discord.RichEmbed()
    .setAuthor(`Nameless Bot left a server ❎`)
    .setDescription(`**
@@ -464,8 +436,8 @@ Server owner: __${guild.owner}__
 Members Count: __${guild.memberCount}__
 Servers Counter : __${client.guilds.size}__**`)
          .setColor("#f3ae10")
-         .setFooter('kh-1 الاساسي' , client.user.avatarURL)
-           client.channels.get("493388063330926592").send({embed});
+         .setFooter('بوت مجتمع RTF' , client.user.avatarURL)
+           client.channels.get("346167763305496594").send({embed});
 }
 
 );
@@ -577,7 +549,7 @@ message.channel.send(embed);
     
 });
 
-/////////////////////////////////كود حالة البةت/////////////////////////////////
+/////////////////////////////////كود حالة البوت/////////////////////////////////
 
 
 
@@ -792,7 +764,7 @@ client.on("guildMemberAdd", member => {
 
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
-            if (message.content.startsWith(prefix + "ping")) {
+            if (message.content.startsWith(prefix + "piing")) {
         message.channel.sendMessage(':ping_pong: Pong! In `' + `${client.ping}` + ' ms`');
     }
 });
@@ -997,9 +969,8 @@ client.on('ready',async () => {
   }
 });	
 ///////////////////رابط10 اشخاص///////////////////
-
 client.on('message', message => {
-    if (message.content.startsWith("رابط10")) {
+    if (message.content.startsWith("رابط")) {
 
   message.channel.createInvite({
         thing: true,
@@ -1140,7 +1111,6 @@ client.on('message', message => {
  
 
 ❖  يرسل رسالة بالخاص تحتوي على رابط لشخص مدة ساعة  ➾        رابط
-❖ يرسل رسالة بالخاص تحتوي على رابط لسيرفر لـ 10 أِشخاص مدة يوم ➾       رابط10
 ❖ يعرض صورة السيرفر في الشات  ➾        -صورة
 ❖ يعرض لك التاريخ بالشات  ➾      -التاريخ
 ❖ يعرض لك أعضاء السيرفر  ➾       -اعضاء
@@ -1153,11 +1123,11 @@ client.on('message', message => {
 ❖ -phot              ➾يعرض لك صورة الشخص اللي تمنشن له 
 ❖ -ping              ➾ يعرض بنقك في الشات
 ❖ -srever              ➾ يعرض معلومات عن الشيفر بطرقية اخرآ
-
+❖ -sug             ➾ لاقتراح جديد اكتبة بشات البوت ويجي لشات الاقتراحات
 
 
 ╔[❖════════════❖]╗
-                    Welcome
+                    Welcome    
 ╚[❖════════════❖]╝
 
 ("❖ RTF المجتمع يرحب بأعضائة جميعاً ويتمنى لكم يوم سعيد RTF ❖")
@@ -1205,27 +1175,61 @@ client.on('message', message => {
 });
 
 
+////////////////////////////////////////كود البنق مطور/////////////////////////////
+
+ client.on('message', message => { //ping
+                                if(!message.channel.guild) return;
+                        if (message.content.startsWith(prefix + 'ping')) {
+                            if(!message.channel.guild) return;
+                            var msg = `${Date.now() - message.createdTimestamp}`
+                            var api = `${Math.round(client.ping)}`
+                            if (message.author.bot) return;
+                        let embed = new Discord.RichEmbed()
+                        .setAuthor(message.author.username,message.author.avatarURL)
+                        .setColor('#5016f3')
+                        .addField('**Time Taken:**',msg + " ms :signal_strength: ")
+                        .addField('**WebSocket:**',api + " ms :signal_strength: ")
+                        .setTimestamp()
+        message.channel.send({embed:embed});
+                        }
+                    });
+
+
 /////////////////////////////////////////////////////////////////////
 
 
-client.on('message', function(message) {//Narox
-    if (message.channel.type === "dm") {
-        if (message.author.id === client.user.id) return;//Narox
-        var Narox = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTimestamp()//Narox
-        .setTitle('``I have received a new DM !``')
-        .setThumbnail(`${message.author.avatarURL}`)//Narox
-        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    client.channels.get("529405300265058315").send({embed:Narox});//Narox
+client.on('message', message => {
+ 
+    if(message.content.split(' ')[0] == '-sug'){ //حقوق ناروكس
+        if (message.author.bot) return;
+     
+                            let args = message.content.split(' ').slice(1).join(' ');
+                                 if (!args) return message.reply("You Have To Write A Msg !");//حقوق ناروكس
+   
+      let embed = new Discord.RichEmbed()
+                                                    .setAuthor(message.author.username, message.author.avatarURL)
+                                                    .setDescription('**__:mailbox_with_mail: Suggestion Sent !__**')
+                                                    .setThumbnail(message.author.avatarURL)
+                                                    .addField("**-Sent By :**", message.author.username)
+                                                        .addField("**-Sender ID :**", message.author.id)
+                                                    .addField("**-Suggest :**", args)//حقوق ناروكس
+                                                    .setColor("FF0000")
+                                                    .setFooter(message.author.username, message.author.avatarURL)
+                                                   
+                                                   
+     client.channels.get("529608741687918595").send({ embed: embed }); //ايدي الروم هنا
+      let embe = new Discord.RichEmbed()
+                                                    .setAuthor(message.author.username, message.author.avatarURL)
+                                                    .setDescription('**__:mailbox_with_mail: Suggestion Sent Successfully !__**')
+                                                    .setThumbnail(message.author.avatarURL)
+                                                                                                    .setColor("FF0000")
+   
+                                                    .setFooter(message.author.username, message.author.avatarURL)//حقوق ناروكس
+                                                    message.channel.sendEmbed({ embed: embed });
+               
+                                     
     }
-});
-
-/////////////////////////////////////////////////////////////////////
-
-
-
+    });
 
 /////////////////////////////////////////////////////////////////////
 
