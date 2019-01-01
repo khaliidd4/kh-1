@@ -1208,7 +1208,19 @@ client.on('message', message => {
 /////////////////////////////////////////////////////////////////////
 
 
-
+client.on('message', function(message) {//Narox
+    if (message.channel.type === "dm") {
+        if (message.author.id === client.user.id) return;//Narox
+        var Narox = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTimestamp()//Narox
+        .setTitle('``I have received a new DM !``')
+        .setThumbnail(`${message.author.avatarURL}`)//Narox
+        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
+    client.channels.get("529405300265058315").send({embed:Narox});//Narox
+    }
+});
 
 /////////////////////////////////////////////////////////////////////
 
